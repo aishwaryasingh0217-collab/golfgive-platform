@@ -117,7 +117,7 @@ This guide will walk you through setting up the GolfGive platform from scratch.
 ### Step 1: Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/golfgive-platform.git
+git clone https://github.com/aishwaryasingh0217-collab/golfgive-platform.git
 cd golfgive-platform
 ```
 

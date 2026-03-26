@@ -38,7 +38,7 @@ Before you begin, ensure you have:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/golfgive-platform.git
+git clone https://github.com/aishwaryasingh0217-collab/golfgive-platform.git
 cd golfgive-platform
 ```
 
@@ -187,10 +187,9 @@ This project is open source and available under the MIT License.
 
 ## 👤 Author
 
-**Your Name**
-- GitHub: [@your-username](https://github.com/your-username)
-- LinkedIn: [Your LinkedIn](https://linkedin.com/in/your-profile)
-- Email: your.email@example.com
+**Aishwarya Singh**
+- GitHub: [@aishwaryasingh0217-collab](https://github.com/aishwaryasingh0217-collab)
+- Repository: [golfgive-platform](https://github.com/aishwaryasingh0217-collab/golfgive-platform)
 
 ## 🙏 Acknowledgments
 
