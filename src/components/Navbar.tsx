@@ -10,42 +10,27 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <nav style={{
-      position: 'fixed',
-      top: 0,
-      left: 0,
-      right: 0,
-      zIndex: 100,
-      background: 'rgba(2, 6, 23, 0.85)',
-      backdropFilter: 'blur(20px)',
-      WebkitBackdropFilter: 'blur(20px)',
-      borderBottom: '1px solid rgba(52, 211, 153, 0.08)',
-    }}>
-      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '70px' }}>
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#020617]/85 backdrop-blur-[20px] border-b border-emerald-400/10">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
+        <div className="flex items-center justify-between h-[70px]">
           {/* Logo */}
-          <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '10px', textDecoration: 'none' }}>
-            <div style={{
-              width: '38px', height: '38px', borderRadius: '10px',
-              background: 'linear-gradient(135deg, #10b981, #fbbf24)',
-              display: 'flex', alignItems: 'center', justifyContent: 'center',
-              fontSize: '18px', fontWeight: '800', color: '#020617',
-            }}>G</div>
-            <span style={{
-              fontFamily: 'var(--font-heading)', fontWeight: '700', fontSize: '1.25rem',
-              background: 'linear-gradient(135deg, #34d399, #fbbf24)',
-              WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
-            }}>GolfGive</span>
+          <Link href="/" className="flex items-center gap-2.5 no-underline">
+            <div className="w-[38px] h-[38px] rounded-[10px] bg-gradient-to-br from-emerald-500 to-amber-400 flex items-center justify-center text-lg font-extrabold text-[#020617]">
+              G
+            </div>
+            <span className="font-heading font-bold text-xl bg-gradient-to-br from-emerald-400 to-amber-400 bg-clip-text text-transparent">
+              GolfGive
+            </span>
           </Link>
 
           {/* Desktop Nav */}
-          <div style={{ alignItems: 'center', gap: '8px' }} className="hidden md:flex">
+          <div className="hidden md:flex items-center gap-2">
             <NavLink href="/#how-it-works">How It Works</NavLink>
             <NavLink href="/charities">Charities</NavLink>
             <NavLink href="/#pricing">Pricing</NavLink>
             {user ? (
               <>
-                <Link href="/dashboard" className="btn-primary btn-small" style={{ marginLeft: '8px' }}>
+                <Link href="/dashboard" className="btn-primary btn-small ml-2">
                   <LayoutDashboard size={16} /> Dashboard
                 </Link>
                 {user.role === 'admin' && (
@@ -53,13 +38,13 @@ export default function Navbar() {
                     <Shield size={16} /> Admin
                   </Link>
                 )}
-                <button onClick={signOut} className="btn-secondary btn-small">
+                <button onClick={signOut} className="btn-secondary btn-small bg-transparent">
                   <LogOut size={16} />
                 </button>
               </>
             ) : (
               <>
-                <Link href="/auth" className="btn-secondary btn-small" style={{ marginLeft: '8px' }}>Sign In</Link>
+                <Link href="/auth" className="btn-secondary btn-small ml-2">Sign In</Link>
                 <Link href="/auth?mode=signup" className="btn-primary btn-small">Get Started</Link>
               </>
             )}
@@ -68,39 +53,54 @@ export default function Navbar() {
           {/* Mobile menu button */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden"
-            style={{ background: 'none', border: 'none', color: '#e2e8f0', cursor: 'pointer' }}
+            className="md:hidden flex items-center justify-center p-2 text-slate-200 bg-transparent border-none cursor-pointer"
+            aria-label="Toggle menu"
           >
-            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+            {mobileOpen ? <X size={26} /> : <Menu size={26} />}
           </button>
         </div>
       </div>
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div style={{
-          background: 'rgba(2, 6, 23, 0.98)',
-          borderTop: '1px solid rgba(52, 211, 153, 0.08)',
-          padding: '20px 24px',
-        }} className="md:hidden animate-fade-in">
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-            <Link href="/#how-it-works" onClick={() => setMobileOpen(false)} style={mobileLink}>How It Works</Link>
-            <Link href="/charities" onClick={() => setMobileOpen(false)} style={mobileLink}>Charities</Link>
-            <Link href="/#pricing" onClick={() => setMobileOpen(false)} style={mobileLink}>Pricing</Link>
-            {user ? (
-              <>
-                <Link href="/dashboard" onClick={() => setMobileOpen(false)} className="btn-primary" style={{ textAlign: 'center', justifyContent: 'center' }}>Dashboard</Link>
-                {user.role === 'admin' && (
-                  <Link href="/admin" onClick={() => setMobileOpen(false)} className="btn-secondary" style={{ textAlign: 'center', justifyContent: 'center' }}>Admin Panel</Link>
-                )}
-                <button onClick={() => { signOut(); setMobileOpen(false); }} className="btn-secondary" style={{ justifyContent: 'center' }}>Sign Out</button>
-              </>
-            ) : (
-              <>
-                <Link href="/auth" onClick={() => setMobileOpen(false)} className="btn-secondary" style={{ textAlign: 'center', justifyContent: 'center' }}>Sign In</Link>
-                <Link href="/auth?mode=signup" onClick={() => setMobileOpen(false)} className="btn-primary" style={{ textAlign: 'center', justifyContent: 'center' }}>Get Started</Link>
-              </>
-            )}
+        <div className="md:hidden absolute top-[70px] left-0 right-0 bg-[#020617]/98 border-t border-emerald-400/10 p-5 shadow-2xl animate-fade-in shadow-black/50 backdrop-blur-xl">
+          <div className="flex flex-col gap-3">
+            <Link href="/#how-it-works" onClick={() => setMobileOpen(false)} className="text-slate-300 no-underline py-3 px-2 text-base font-medium border-b border-slate-800/50 hover:text-emerald-400 transition-colors">
+              How It Works
+            </Link>
+            <Link href="/charities" onClick={() => setMobileOpen(false)} className="text-slate-300 no-underline py-3 px-2 text-base font-medium border-b border-slate-800/50 hover:text-emerald-400 transition-colors">
+              Charities
+            </Link>
+            <Link href="/#pricing" onClick={() => setMobileOpen(false)} className="text-slate-300 no-underline py-3 px-2 text-base font-medium border-b border-slate-800/50 hover:text-emerald-400 transition-colors">
+              Pricing
+            </Link>
+            
+            <div className="flex flex-col gap-3 pt-4 pb-2">
+              {user ? (
+                <>
+                  <Link href="/dashboard" onClick={() => setMobileOpen(false)} className="btn-primary w-full justify-center text-center">
+                    Dashboard
+                  </Link>
+                  {user.role === 'admin' && (
+                    <Link href="/admin" onClick={() => setMobileOpen(false)} className="btn-secondary w-full justify-center text-center">
+                      Admin Panel
+                    </Link>
+                  )}
+                  <button onClick={() => { signOut(); setMobileOpen(false); }} className="btn-secondary w-full justify-center text-center">
+                    Sign Out
+                  </button>
+                </>
+              ) : (
+                <>
+                  <Link href="/auth" onClick={() => setMobileOpen(false)} className="btn-secondary w-full justify-center text-center">
+                    Sign In
+                  </Link>
+                  <Link href="/auth?mode=signup" onClick={() => setMobileOpen(false)} className="btn-primary w-full justify-center text-center">
+                    Get Started
+                  </Link>
+                </>
+              )}
+            </div>
           </div>
         </div>
       )}
@@ -108,28 +108,11 @@ export default function Navbar() {
   );
 }
 
-const mobileLink: React.CSSProperties = {
-  color: '#cbd5e1',
-  textDecoration: 'none',
-  padding: '12px 0',
-  fontSize: '1rem',
-  fontWeight: '500',
-  borderBottom: '1px solid rgba(30, 41, 59, 0.5)',
-};
-
 function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
   return (
-    <Link href={href} style={{
-      color: '#94a3b8',
-      textDecoration: 'none',
-      padding: '8px 14px',
-      borderRadius: '8px',
-      fontSize: '0.9rem',
-      fontWeight: '500',
-      transition: 'all 0.2s ease',
-    }}
-    onMouseEnter={e => { e.currentTarget.style.color = '#34d399'; e.currentTarget.style.background = 'rgba(52, 211, 153, 0.08)'; }}
-    onMouseLeave={e => { e.currentTarget.style.color = '#94a3b8'; e.currentTarget.style.background = 'transparent'; }}
+    <Link 
+      href={href} 
+      className="text-slate-400 no-underline px-3.5 py-2 rounded-lg text-[0.9rem] font-medium transition-all duration-200 hover:text-emerald-400 hover:bg-emerald-400/10"
     >
       {children}
     </Link>
