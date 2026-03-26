@@ -56,6 +56,14 @@ body {
   color: var(--color-dark-100);
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* iOS Safari specific */
+  -webkit-tap-highlight-color: rgba(16, 185, 129, 0.2);
+  -webkit-touch-callout: none;
+  /* Prevent text size adjustment on orientation change */
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -109,12 +117,21 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   gap: 8px;
   text-decoration: none;
+  /* Mobile touch optimization */
+  min-height: 44px;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .btn-primary:hover {
   background: linear-gradient(135deg, var(--color-emerald-500), var(--color-emerald-400));
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
 }
 
 .btn-secondary {
@@ -131,12 +148,21 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   gap: 8px;
   text-decoration: none;
+  /* Mobile touch optimization */
+  min-height: 44px;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .btn-secondary:hover {
   background: rgba(52, 211, 153, 0.1);
   border-color: rgba(52, 211, 153, 0.4);
   transform: translateY(-2px);
+}
+
+.btn-secondary:active {
+  transform: translateY(0);
 }
 
 .btn-gold {
@@ -153,11 +179,20 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   gap: 8px;
   text-decoration: none;
+  /* Mobile touch optimization */
+  min-height: 44px;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .btn-gold:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(245, 158, 11, 0.3);
+}
+
+.btn-gold:active {
+  transform: translateY(0);
 }
 
 .btn-small {
@@ -194,6 +229,11 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 0.3s ease;
   width: 100%;
   font-family: var(--font-body);
+  /* Mobile optimization */
+  min-height: 44px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 .input-field:focus {
@@ -204,6 +244,15 @@ h1, h2, h3, h4, h5, h6 {
 
 .input-field::placeholder {
   color: var(--color-dark-500);
+}
+
+/* Prevent zoom on iOS when focusing inputs */
+@media screen and (max-width: 768px) {
+  .input-field,
+  .select-field,
+  textarea.input-field {
+    font-size: 16px;
+  }
 }
 
 /* Animations */
@@ -394,6 +443,10 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-body);
   appearance: none;
   cursor: pointer;
+  /* Mobile optimization */
+  min-height: 44px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
 
 .select-field:focus {
@@ -454,4 +507,93 @@ textarea.input-field {
   max-width: 500px;
   max-height: 90vh;
   overflow-y: auto;
+}
+
+/* Mobile Responsive Utilities */
+@media screen and (max-width: 768px) {
+  .glass-card {
+    border-radius: 12px;
+  }
+
+  .btn-primary,
+  .btn-secondary,
+  .btn-gold {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .btn-small {
+    width: auto;
+  }
+
+  .modal-content {
+    padding: 24px;
+    width: 95%;
+    max-height: 85vh;
+  }
+
+  /* Improve touch targets on mobile */
+  .sidebar-link {
+    padding: 14px 16px;
+    font-size: 1rem;
+  }
+
+  /* Better spacing on mobile */
+  section {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
+
+/* iOS Safe Area Support */
+@supports (padding: max(0px)) {
+  body {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+
+  nav {
+    padding-left: max(24px, env(safe-area-inset-left));
+    padding-right: max(24px, env(safe-area-inset-right));
+  }
+}
+
+/* Prevent horizontal scroll on mobile */
+@media screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+}
+
+/* Better table responsiveness */
+@media screen and (max-width: 768px) {
+  .data-table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .data-table th,
+  .data-table td {
+    white-space: nowrap;
+    padding: 10px 12px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Smooth scrolling for iOS */
+* {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Android Chrome address bar compensation */
+@media screen and (max-width: 768px) {
+  .min-h-screen {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+  }
+
+  html {
+    height: -webkit-fill-available;
+  }
 }

@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velora Web Solutions - Client Questionnaire</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #1e3a5f;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        .header {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2d5a8f 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        .logo-section {
+            margin-bottom: 20px;
+        }
+        .company-name {
+            font-size: 42px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        }
+        .tagline {
+            font-size: 18px;
+            color: #4db8e8;
+            font-weight: 300;
+            letter-spacing: 3px;
+        }
+        .contact-bar {
+            background: #4db8e8;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: white;
+            font-size: 14px;
+        }
+        .content {
+            padding: 50px;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .section-title {
+            font-size: 24px;
+            color: #1e3a5f;
+            border-bottom: 3px solid #4db8e8;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        .intro-text {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 30px;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .service-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .service-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .service-card p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        .question-block {
+            background: #f8f9fa;
+            padding: 20px;
+            border-left: 4px solid #4db8e8;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        .question-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1e3a5f;
+            margin-bottom: 10px;
+        }
+        .question-desc {
+            font-size: 14px;
+            color: #666;
+            font-style: italic;
+        }
+        .pricing-table {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2d5a8f 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+        .pricing-table h3 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .price-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+        .price-item:last-child {
+            border-bottom: none;
+        }
+        .highlight-box {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .highlight-box h4 {
+            color: #856404;
+            margin-bottom: 10px;
+        }
+        .footer {
+            background: #1e3a5f;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        .footer-contact {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        @media print {
+            body { background: white; padding: 0; }
+            .container { box-shadow: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo-section">
+                <div class="company-name">VELORA</div>
+                <div class="tagline">WEB SOLUTIONS</div>
+            </div>
+            <h1 style="font-size: 28px; margin-top: 20px;">Professional Web Development Services</h1>
+            <p style="margin-top: 10px; font-size: 16px;">Transform Your Business with a Stunning Website</p>
+        </div>
+
+        <!-- Contact Bar -->
+        <div class="contact-bar">
+            <div class="contact-item">
+                <span>📧</span>
+                <span>velorawebsolution@gmail.com</span>
+            </div>
+            <div class="contact-item">
+                <span>📱</span>
+                <span>+91 8310979654</span>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content">
+            <!-- Introduction -->
+            <div class="section">
+                <h2 class="section-title">Welcome to Velora Web Solutions</h2>
+                <p class="intro-text">
+                    Thank you for considering Velora Web Solutions for your web development needs. We specialize in creating 
+                    professional, modern, and responsive websites for businesses across all industries. This questionnaire will 
+                    help us understand your requirements and deliver a website that perfectly matches your vision.
+                </p>
+                <p class="intro-text">
+                    Please take a few minutes to fill out this form with as much detail as possible. The more information you 
+                    provide, the better we can serve you and create a website that exceeds your expectations.
+                </p>
+            </div>
+
+            <!-- Our Services -->
+            <div class="section">
+                <h2 class="section-title">Our Services</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h3>🛒 E-Commerce</h3>
+                        <p>Full-featured online stores with payment integration</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>🏢 Business Websites</h3>
+                        <p>Professional corporate websites</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>✍️ Portfolio & Blogs</h3>
+                        <p>Showcase your work beautifully</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>💻 Custom Solutions</h3>
+                        <p>Tailored web applications</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Client Information -->
+            <div class="section">
+                <h2 class="section-title">1. Client Information</h2>
+                
+                <div class="question-block">
+                    <div class="question-title">Your Full Name / Company Name</div>
+                    <div class="question-desc">Please provide your name or registered business name</div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-title">Contact Number</div>
+                    <div class="question-desc">Primary phone number for communication</div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-title">Email Address</div>
+                    <div class="question-desc">Your primary email for project updates</div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-title">Business/Industry Type</div>
+                    <div class="question-desc">E.g., Restaurant, Real Estate, Education, Healthcare, E-commerce, etc.</div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-title">Current Website (if any)</div>
+                    <div class="question-desc">Do you have an existing website? If yes, please provide the URL</div>
+                </div>
+            </div>
+            <!-- Project Details -->
+            <div class="section">
+                <h2 class="section-title">2. Project Requirements</h2>
+                
+                <div class="question-block">
+                    <div class="question-title">Type of Website Needed</div>
+                    <div class="question-desc">
+                        ☐ Business/Corporate Website<br>
+                        ☐ E-Commerce Store<br>
+                        ☐ Portfolio Website<br>
+                        ☐ Blog/News Website<br>
+                        ☐ Educational Platform<br>
+                        ☐ Restaurant/Food Website<br>
+                        ☐ Real Estate Website<br>
+                        ☐ Custom Web Application<br>
+                        ☐ Other (Please specify)
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-title">Primary Goal of the Website</div>
+                    <div class="question-desc">What do you want to achieve? (e.g., sell products, generate leads, showcase portfolio, provide information)</div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-title">Target Audience</div>
+                    <div class="question-desc">Who are your primary customers/visitors? (age group, location, interests)</div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-title">Number of Pages Required</div>
+                    <div class="question-desc">Approximate number of pages (e.g., Home, About, Services, Contact, etc.)</div>
+                </div>
+            </div>
+            <!-- Features & Functionality -->
+            <div class="section">
+                <h2 class="section-title">3. Features & Functionality</h2>
+                
+                <div class="question-block">
+                    <div class="question-title">Required Features</div>
+                    <div class="question-desc">
+                        ☐ Contact Form<br>
+                        ☐ Image Gallery<br>
+                        ☐ Blog Section<br>
+                        ☐ Online Payment Integration<br>
+                        ☐ Shopping Cart<br>
+                        ☐ User Login/Registration<br>
+                        ☐ Search Functionality<br>
+                        ☐ Social Media Integration<br>
+                        ☐ Google Maps Integration<br>
+                        ☐ Newsletter Subscription<br>
+                        ☐ Live Chat Support<br>
+                        ☐ Booking/Appointment System<br>
+                        ☐ Multi-language Support<br>
+                        ☐ Other (Please specify)
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-title">Mobile Responsiveness</div>
+                    <div class="question-desc">Do you need the website to work perfectly on mobile devices? (Highly Recommended: Yes)</div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-title">Content Management</div>
+                    <div class="question-desc">Do you want to update content yourself? (We can provide an easy-to-use admin panel)</div>
+                </div>
+            </div>
+            <!-- Design Preferences -->
+            <div class="section">
+                <h2 class="section-title">4. Design Preferences</h2>
+                
+                <div class="question-block">
+                    <div class="question-title">Design Style Preference</div>
+                    <div class="question-desc">
+                        ☐ Modern & Minimalist<br>
+                        ☐ Bold & Colorful<br>
+                        ☐ Professional & Corporate<br>
+                        ☐ Creative & Artistic<br>
+                        ☐ Classic & Traditional<br>
+                        ☐ No preference (Designer's choice)
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-title">Color Preferences</div>
+                    <div class="question-desc">Any specific colors you want to use? (e.g., brand colors)</div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-title">Reference Websites</div>
+                    <div class="question-desc">Any websites you like? Please share URLs for design inspiration</div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-title">Logo & Branding</div>
+                    <div class="question-desc">Do you have a logo? If yes, please share. If no, do you need logo design services?</div>
+                </div>
+            </div>
+            <!-- Content & Materials -->
+            <div class="section">
+                <h2 class="section-title">5. Content & Materials</h2>
+                
+                <div class="question-block">
+                    <div class="question-title">Content Availability</div>
+                    <div class="question-desc">
+                        ☐ I will provide all text content<br>
+                        ☐ I need help writing content<br>
+                        ☐ I have some content, need help with rest
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-title">Images & Media</div>
+                    <div class="question-desc">
+                        ☐ I will provide all images/videos<br>
+                        ☐ Please use stock images<br>
+                        ☐ I need professional photography
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-title">Existing Materials</div>
+                    <div class="question-desc">Do you have brochures, business cards, or marketing materials we can reference?</div>
+                </div>
+            </div>
+
+            <!-- Domain & Hosting -->
+            <div class="section">
+                <h2 class="section-title">6. Domain & Hosting</h2>
+                
+                <div class="question-block">
+                    <div class="question-title">Domain Name</div>
+                    <div class="question-desc">
+                        ☐ I already have a domain (Please specify: _____________)<br>
+                        ☐ I need a new domain (Preferred name: _____________)<br>
+                        ☐ Help me choose a domain name
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    <h4>✨ Special Offer</h4>
+                    <p>1 Year Domain Registration Included FREE with all packages!</p>
+                </div>
+            </div>
+            <!-- Timeline & Budget -->
+            <div class="section">
+                <h2 class="section-title">7. Timeline & Budget</h2>
+                
+                <div class="question-block">
+                    <div class="question-title">Project Deadline</div>
+                    <div class="question-desc">When do you need the website completed? (Typical timeline: 2-4 weeks)</div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-title">Budget Range</div>
+                    <div class="question-desc">What is your approximate budget for this project?</div>
+                </div>
+
+                <!-- Pricing Table -->
+                <div class="pricing-table">
+                    <h3>💰 Starting Packages</h3>
+                    <div class="price-item">
+                        <span>Basic Website (5-7 pages)</span>
+                        <span><strong>₹9,999</strong></span>
+                    </div>
+                    <div class="price-item">
+                        <span>Business Website (10-15 pages)</span>
+                        <span><strong>₹19,999</strong></span>
+                    </div>
+                    <div class="price-item">
+                        <span>E-Commerce Store</span>
+                        <span><strong>₹29,999+</strong></span>
+                    </div>
+                    <div class="price-item">
+                        <span>Custom Web Application</span>
+                        <span><strong>Custom Quote</strong></span>
+                    </div>
+                    <p style="margin-top: 20px; font-size: 14px; text-align: center; opacity: 0.9;">
+                        * All packages include 1 year free domain registration
+                    </p>
+                </div>
+            </div>
+            <!-- Additional Information -->
+            <div class="section">
+                <h2 class="section-title">8. Additional Information</h2>
+                
+                <div class="question-block">
+                    <div class="question-title">Competitors</div>
+                    <div class="question-desc">Who are your main competitors? Please share their website URLs</div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-title">SEO & Marketing</div>
+                    <div class="question-desc">Are you interested in SEO (Search Engine Optimization) services?</div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-title">Maintenance & Support</div>
+                    <div class="question-desc">Do you need ongoing maintenance and support after launch?</div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-title">Special Requirements</div>
+                    <div class="question-desc">Any other specific requirements or features you need?</div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-title">How Did You Hear About Us?</div>
+                    <div class="question-desc">Social media, referral, advertisement, search engine, etc.</div>
+                </div>
+            </div>
+            <!-- What We Offer -->
+            <div class="section">
+                <h2 class="section-title">Why Choose Velora Web Solutions?</h2>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px;">
+                    <div style="padding: 20px; background: #f8f9fa; border-radius: 10px; border-left: 4px solid #4db8e8;">
+                        <h4 style="color: #1e3a5f; margin-bottom: 10px;">✅ Professional Quality</h4>
+                        <p style="font-size: 14px; color: #666;">Modern, responsive designs that work on all devices</p>
+                    </div>
+                    <div style="padding: 20px; background: #f8f9fa; border-radius: 10px; border-left: 4px solid #4db8e8;">
+                        <h4 style="color: #1e3a5f; margin-bottom: 10px;">⚡ Fast Delivery</h4>
+                        <p style="font-size: 14px; color: #666;">Quick turnaround time without compromising quality</p>
+                    </div>
+                    <div style="padding: 20px; background: #f8f9fa; border-radius: 10px; border-left: 4px solid #4db8e8;">
+                        <h4 style="color: #1e3a5f; margin-bottom: 10px;">💰 Affordable Pricing</h4>
+                        <p style="font-size: 14px; color: #666;">Competitive rates with transparent pricing</p>
+                    </div>
+                    <div style="padding: 20px; background: #f8f9fa; border-radius: 10px; border-left: 4px solid #4db8e8;">
+                        <h4 style="color: #1e3a5f; margin-bottom: 10px;">🔧 Free Maintenance</h4>
+                        <p style="font-size: 14px; color: #666;">1 month free support after website launch</p>
+                    </div>
+                    <div style="padding: 20px; background: #f8f9fa; border-radius: 10px; border-left: 4px solid #4db8e8;">
+                        <h4 style="color: #1e3a5f; margin-bottom: 10px;">📱 Mobile Optimized</h4>
+                        <p style="font-size: 14px; color: #666;">Perfect viewing on iPhone & Android devices</p>
+                    </div>
+                    <div style="padding: 20px; background: #f8f9fa; border-radius: 10px; border-left: 4px solid #4db8e8;">
+                        <h4 style="color: #1e3a5f; margin-bottom: 10px;">🎓 Student Projects</h4>
+                        <p style="font-size: 14px; color: #666;">College projects with complete documentation</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Next Steps -->
+            <div class="section">
+                <h2 class="section-title">Next Steps</h2>
+                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; border-radius: 10px;">
+                    <h3 style="margin-bottom: 20px; font-size: 22px;">How to Proceed:</h3>
+                    <ol style="line-height: 2; font-size: 16px; padding-left: 20px;">
+                        <li>Fill out this questionnaire with as much detail as possible</li>
+                        <li>Send it back to us via email or WhatsApp</li>
+                        <li>We'll review your requirements and prepare a detailed proposal</li>
+                        <li>Schedule a call to discuss the project in detail</li>
+                        <li>Receive a custom quote and timeline</li>
+                        <li>Once approved, we start building your dream website!</li>
+                    </ol>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <h2 style="margin-bottom: 20px; font-size: 28px;">Let's Build Something Amazing Together!</h2>
+            <div class="footer-contact">
+                📧 velorawebsolution@gmail.com
+            </div>
+            <div class="footer-contact">
+                📱 +91 8310979654
+            </div>
+            <p style="margin-top: 20px; font-size: 14px; opacity: 0.8;">
+                © 2024 Velora Web Solutions. All Rights Reserved.
+            </p>
+            <p style="margin-top: 10px; font-size: 14px; opacity: 0.8;">
+                Professional Web Design & Development Services
+            </p>
+        </div>
+
+    </div>
+</body>
+</html>

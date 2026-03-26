@@ -30,7 +30,7 @@ export default function HomePage() {
             animationDelay: '2s',
           }} />
 
-          <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px', textAlign: 'center', position: 'relative' }}>
+          <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px', textAlign: 'center', position: 'relative' }}>
             <div className="animate-fade-in-up" style={{ marginBottom: '24px' }}>
               <span style={{
                 display: 'inline-flex', alignItems: 'center', gap: '8px',
@@ -44,7 +44,7 @@ export default function HomePage() {
 
             <h1 className="animate-fade-in-up" style={{
               fontFamily: 'var(--font-heading)', fontWeight: '800',
-              fontSize: 'clamp(2.5rem, 6vw, 4.5rem)', lineHeight: '1.1',
+              fontSize: 'clamp(2rem, 8vw, 4.5rem)', lineHeight: '1.1',
               marginBottom: '24px', maxWidth: '800px', margin: '0 auto 24px',
             }}>
               <span className="gradient-text-white">Play Golf.</span>{' '}
@@ -53,14 +53,15 @@ export default function HomePage() {
             </h1>
 
             <p className="animate-fade-in-up" style={{
-              color: '#94a3b8', fontSize: 'clamp(1rem, 2vw, 1.2rem)',
+              color: '#94a3b8', fontSize: 'clamp(0.95rem, 2.5vw, 1.2rem)',
               maxWidth: '600px', margin: '0 auto 40px', lineHeight: '1.7',
+              padding: '0 10px',
             }}>
               Track your golf scores, enter monthly prize draws, and support
               charities that matter — all in one beautiful platform.
             </p>
 
-            <div className="animate-fade-in-up" style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <div className="animate-fade-in-up" style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap', padding: '0 10px' }}>
               <Link href={user ? '/dashboard' : '/auth?mode=signup'} className="btn-gold">
                 {user ? 'Go to Dashboard' : 'Start Your Journey'} <ArrowRight size={18} />
               </Link>
@@ -71,8 +72,8 @@ export default function HomePage() {
 
             {/* Stats bar */}
             <div className="animate-fade-in-up" style={{
-              display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
-              gap: '1px', marginTop: '80px',
+              display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(120px, 1fr))',
+              gap: '1px', marginTop: '60px',
               background: 'rgba(52, 211, 153, 0.05)', borderRadius: '16px',
               border: '1px solid rgba(52, 211, 153, 0.08)', overflow: 'hidden',
             }}>
@@ -83,12 +84,12 @@ export default function HomePage() {
                 { value: '95%', label: 'Happy Players', icon: <Star size={18} /> },
               ].map((stat, i) => (
                 <div key={i} style={{
-                  padding: '24px', textAlign: 'center',
+                  padding: 'clamp(16px, 4vw, 24px)', textAlign: 'center',
                   background: 'rgba(15, 23, 42, 0.5)',
                 }}>
                   <div style={{ color: '#34d399', marginBottom: '8px', display: 'flex', justifyContent: 'center' }}>{stat.icon}</div>
-                  <div style={{ fontFamily: 'var(--font-heading)', fontSize: '1.5rem', fontWeight: '700', color: '#f1f5f9' }}>{stat.value}</div>
-                  <div style={{ fontSize: '0.8rem', color: '#64748b', marginTop: '4px' }}>{stat.label}</div>
+                  <div style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(1.2rem, 3vw, 1.5rem)', fontWeight: '700', color: '#f1f5f9' }}>{stat.value}</div>
+                  <div style={{ fontSize: 'clamp(0.7rem, 2vw, 0.8rem)', color: '#64748b', marginTop: '4px' }}>{stat.label}</div>
                 </div>
               ))}
             </div>

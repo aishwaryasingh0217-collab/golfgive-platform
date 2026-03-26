@@ -39,7 +39,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Nav */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }} className="hidden md:flex">
+          <div style={{ alignItems: 'center', gap: '8px' }} className="hidden md:flex">
             <NavLink href="/#how-it-works">How It Works</NavLink>
             <NavLink href="/charities">Charities</NavLink>
             <NavLink href="/#pricing">Pricing</NavLink>

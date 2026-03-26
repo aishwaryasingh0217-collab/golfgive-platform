@@ -45,7 +45,6 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         background: 'rgba(15, 23, 42, 0.6)',
         borderRight: sidebarOpen ? '1px solid rgba(52, 211, 153, 0.08)' : 'none',
         padding: sidebarOpen ? '24px 16px' : '0',
-        display: 'flex',
         flexDirection: 'column',
         position: 'fixed',
         top: 0,
@@ -183,10 +182,9 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
       {/* Main content */}
       <main style={{
         flex: 1,
-        marginLeft: sidebarOpen ? '260px' : '0',
         padding: '100px 24px 40px',
         transition: 'margin-left 0.3s ease',
-      }} className="md:pt-[32px]">
+      }} className={`md:pt-[32px] ${sidebarOpen ? 'md:ml-[260px]' : 'ml-0'}`}>
         <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
           {children}
         </div>

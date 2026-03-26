@@ -131,8 +131,8 @@ export default function ScoresPage() {
               color: '#f87171', fontSize: '0.85rem',
             }}>{error}</div>
           )}
-          <form onSubmit={addScore} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr auto', gap: '12px', alignItems: 'end' }}>
-            <div>
+          <form onSubmit={addScore} className="flex flex-col sm:flex-row gap-3 sm:items-end">
+            <div className="flex-1">
               <label style={{ display: 'block', color: '#94a3b8', fontSize: '0.8rem', fontWeight: '500', marginBottom: '6px' }}>
                 Score (1-45)
               </label>
@@ -148,7 +148,7 @@ export default function ScoresPage() {
                 required
               />
             </div>
-            <div>
+            <div className="flex-1">
               <label style={{ display: 'block', color: '#94a3b8', fontSize: '0.8rem', fontWeight: '500', marginBottom: '6px' }}>
                 Date Played
               </label>
@@ -161,7 +161,7 @@ export default function ScoresPage() {
                 required
               />
             </div>
-            <button type="submit" className="btn-primary" disabled={submitting} style={{ height: '46px' }}>
+            <button type="submit" className="btn-primary w-full sm:w-auto" disabled={submitting} style={{ height: '46px', display: 'flex', justifyContent: 'center' }}>
               {submitting ? 'Saving...' : 'Save'}
             </button>
           </form>
